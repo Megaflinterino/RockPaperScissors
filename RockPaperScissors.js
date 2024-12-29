@@ -1,6 +1,6 @@
 
 let humanScore = 0
-let cumputerScore = 0
+let computerScore = 0
 
 function getComputerChoice(){
     let a = (Math.random() * 100) + 1;
@@ -10,16 +10,19 @@ function getComputerChoice(){
     if (a <= 33.333){
         let computerChoice = "rock"
         console.log(computerChoice)
+        return "rock"
     }
 
     else if (a > 33.333 && a < 66.666){
         let computerChoice = "paper"
         console.log(computerChoice)
+        return "paper"
     }
 
     else if (a > 66.666){
         let computerChoice = "scissors"
         console.log(computerChoice)
+        return "scissors"
     }
 }
 //getHumanchoice noch case insensitive machen :rOcK PAPER scissORs
@@ -30,58 +33,55 @@ function getHumanChoice(){
     if (humanChoice.toLowerCase() !== "rock" && humanChoice.toLowerCase() !== "paper" && humanChoice.toLowerCase() !== "scissors"){
         alert("Please Input only Rock, Paper or Scissors!")
     }
+
+    return humanChoice
 }
 
 //Funktioniert nicht, gibt zwar die ersten logs aus aber die if schleifen lösen nicht aus, nächstes mal beheben.
 function playRound(humanChoice, computerChoice){
 
-    console.log("ab Hier playRound")
-    humanChoice =="rock"
-    computerChoice == "rock"
-
-    if (humanChoice == "rock" && computerChoice == "rock"){
-        console.log("Even")
+    if (humanChoice === "rock" && computerChoice === "rock"){
+        console.log("funktioniert")
     }
 
-    if (humanChoice == "rock" && computerChoice == "paper"){
-        console.log("You lose! Paper beats Rock")
+    if (humanChoice === "rock" && computerChoice === "paper"){
+
     }
 
-    if (humanChoice == "rock" && computerChoice == "scissors"){
-        console.log("You Won! Rock beats Scissors.")
+    if (humanChoice === "rock" && computerChoice === "scissors"){
+        
     }
 
 
 
-    if (humanChoice == "paper" && computerChoice == "rock"){
-        console.log("You Won! Paper beats Rock.")
+    if (humanChoice === "paper" && computerChoice === "rock"){
+        
     }
 
-    if (humanChoice == "paper" && computerChoice == "paper"){
-        console.log("Even!")
+    if (humanChoice === "paper" && computerChoice === "paper"){
+        
     }
 
-    if (humanChoice == "paper" && computerChoice == "scissors"){
-        console.log("You Lose! Scissors beats Paper")
-    }
-
-
-
-    if (humanChoice == "scissors" && computerChoice == "rock"){
-        console.log("You Lose! Rock beats Scissors.")
-    }
-
-    if (humanChoice == "scissors" && computerChoice == "paper"){
-        console.log("You Win! Scissors beats Paper")
-    }
-
-    if (humanChoice == "scissors" && computerChoice == "scissors"){
-        console.log("Even!")
-    }
-
-    else{
-    }
+    if (humanChoice === "paper" && computerChoice === "scissors"){
+        
     }
 
 
-console.log(playRound())
+
+    if (humanChoice === "scissors" && computerChoice === "rock"){
+        
+    }
+
+    if (humanChoice === "scissors" && computerChoice === "paper"){
+        
+    }
+
+    if (humanChoice === "scissors" && computerChoice === "scissors"){
+        
+    }
+}
+
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
