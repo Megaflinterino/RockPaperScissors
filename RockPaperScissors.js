@@ -37,8 +37,11 @@ function getHumanChoice(){
 function playRound(humanChoice, computerChoice){
 
 
-    console.log(humanChoice)
-    console.log(computerChoice)
+//console.log(humanChoice)
+//console.log(computerChoice)
+
+
+
 
     if (humanChoice === "rock" && computerChoice === "rock"){
         console.log("Even!")
@@ -90,14 +93,31 @@ function playRound(humanChoice, computerChoice){
     console.log("Youre Points:", humanScore, "Comp. Points:", computerScore)
 }
 
-function playGame(playRound){
 
-    for (let i = 0; i < 5; i++){
+
+function playGame(humanSelection, computerSelection){
+
+    for (let i = 0; i < 5; i++) {
+        
+        let humanSelection = getHumanChoice()
+        let computerSelection = getComputerChoice()
+        console.log(humanSelection, computerSelection)
+
         playRound(humanSelection, computerSelection)
+        console.log(humanScore, computerScore)
+    }
+
+    if (humanScore > computerScore){
+        console.log("You won!")
+    }
+
+    else if (computerScore > humanScore) {
+        console.log("you lost!")
+    }
+
+    else{
+        console.log("Even!")
     }
 }
 
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-
-playGame(playRound)
+playGame(computerScore, humanScore)
